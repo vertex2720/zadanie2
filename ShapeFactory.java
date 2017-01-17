@@ -19,7 +19,7 @@ public class ShapeFactory {
     public int width = 25;
     public int height = 25;
 
-    public ShapeFactory(int shape_type) {
+    public ShapeFactory(int shape_type) { // если целое от деления на 10 равно 1,3,5,9 - разные фигуры. По умолчанию type is nusupported
         switch (shape_type / 10) {
             case 1: {
                 this.shape = ShapeFactory.createStar(3, new Point(0, 0), (double)this.width / 2.0, (double)this.width / 2.0);
@@ -51,7 +51,7 @@ public class ShapeFactory {
                 throw new Error("type is nusupported");
             }
         }
-        switch (shape_type % 10) {
+        switch (shape_type % 10) { // если остаток 1 3 4 7 8 - разный цвет. по умолчанию type is nusupported.
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
                 break;
@@ -77,7 +77,7 @@ public class ShapeFactory {
         }
     }
 
-    private static Shape createStar(int arms, Point center, double rOuter, double rInner) {
+    private static Shape createStar(int arms, Point center, double rOuter, double rInner) { // Рисуем звезду.
         double angle = 3.141592653589793 / (double)arms;
         GeneralPath path = new GeneralPath();
         int i = 0;

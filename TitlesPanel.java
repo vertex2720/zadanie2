@@ -39,7 +39,7 @@ implements ActionListener {
         }
     }
 
-    private void doDrawing(Graphics g) {
+    private void doDrawing(Graphics g) { // Рисовалка
         this.is_done = false;
         this.g2d = (Graphics2D)g;
         this.g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
